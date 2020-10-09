@@ -22,5 +22,5 @@ jobs:
           gcc server.c -c
           gcc client.c -c 
           ls
-          valgrind ./server.out
-          valgrind ./client.out
+          valgrind ./server.o
+          valgrind ./client.o
