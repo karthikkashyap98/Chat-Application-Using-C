@@ -1,0 +1,19 @@
+name: CI workflow
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build all
+        run: |
+          cd Chat-Application-MiniProjectC-/3_Implementation/src
+          gcc server.c -o server 
+          gcc client.c -o client
