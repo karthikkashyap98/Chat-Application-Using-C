@@ -1,0 +1,21 @@
+name: cppcheck workflow
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    name: Run Static code Analysis
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install cppcheck
+        run: sudo apt-get -y install cppcheck
+      - name: Run cppcheck
+        run: |
+          cd Chat-Application-MiniProjectC-/3_Implementation/src 
+          cppcheck .

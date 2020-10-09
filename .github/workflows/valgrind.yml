@@ -22,5 +22,7 @@ jobs:
           gcc server.c -c
           gcc client.c -c 
           ls
-          sudo valgrind ./server.o
-          sudo valgrind ./client.o
+          chmod a+x ./server.o
+          chmod a+x ./client.o
+          valgrind ./server.o
+          valgrind ./client.o
