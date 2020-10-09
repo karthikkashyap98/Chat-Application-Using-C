@@ -20,6 +20,7 @@ jobs:
         run: |
           cd Chat-Application-MiniProjectC-/3_Implementation/src
           gcc server.c -c
-          gcc client.c -c  
-          valgrind server.out
-          valgrind client.out
+          gcc client.c -c 
+          ls
+          valgrind ./server.out
+          valgrind ./client.out
