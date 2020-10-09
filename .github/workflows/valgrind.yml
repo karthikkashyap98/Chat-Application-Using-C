@@ -1,0 +1,26 @@
+name: Valgrind workflow
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install Dependency
+      run: |
+        sudo apt-get -y install valgrind
+        sudo apt-get -y install libcunit1 libcunit1-doc libcunit1-dev 
+    - name: make project
+      run: |
+        cd Chat-Application-MiniProjectC-/3_Implementation/src
+        gcc server.c -c
+        gcc client.c -c  
+        valgrind ./MiniProject_C/3_Implementation/src/server.out
+        valgrind ./MiniProject_C/3_Implementation/src/client.out
