@@ -19,10 +19,10 @@ jobs:
       - name: make project
         run: |
           cd Chat-Application-MiniProjectC-/3_Implementation/src
-          gcc server.c -c
-          gcc client.c -c 
+          gcc server.c -o server 
+          gcc client.c -o client
           ls
-          chmod a+x ./server.o
-          chmod a+x ./client.o
-          valgrind ./server.o
-          valgrind ./client.o
+          chmod a+x ./server
+          chmod a+x ./client
+          valgrind ./server
+          valgrind ./client
